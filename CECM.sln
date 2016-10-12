@@ -8,7 +8,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		SRS.txt = SRS.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECM.Web", "CECM.Web\CECM.Web.csproj", "{974085E1-DDEF-4483-9E99-9EABBA2FE4A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CECM.Web.Tests", "CECM.Web.Tests\CECM.Web.Tests.csproj", "{268BADE2-10B6-44C8-A746-F7FC2EE0B636}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{974085E1-DDEF-4483-9E99-9EABBA2FE4A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974085E1-DDEF-4483-9E99-9EABBA2FE4A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974085E1-DDEF-4483-9E99-9EABBA2FE4A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974085E1-DDEF-4483-9E99-9EABBA2FE4A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268BADE2-10B6-44C8-A746-F7FC2EE0B636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268BADE2-10B6-44C8-A746-F7FC2EE0B636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268BADE2-10B6-44C8-A746-F7FC2EE0B636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268BADE2-10B6-44C8-A746-F7FC2EE0B636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
