@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+ul#menu li {
+    display:inline;
+    padding-right: 10px;
+ h-align:right;
+    /*float:right;*/
+}

@@ -27,3 +27,4 @@ References
 1) https://www.youtube.com/watch?v=E7Voso411Vs - Mosh
 2) https://www.youtube.com/watch?v=VAtVv1Q7ufM - Patrick
 3) https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application - ASP.NET
+4) https://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
