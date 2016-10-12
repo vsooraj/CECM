@@ -1,0 +1,29 @@
+CECM [ Cabot Employee Contact Manager ] Domain Driven Model
+
+We have Web,Windows Forms,IOS,Android,Windows Mobile Version
+
+Sub Projects Under CECM
+
+CECM.sln
+      CECM.BO.dll
+      CECM.BLL.dll
+      CECM.DAL[ADO.NET,EF,LINQ SQL].dll
+      CECM.Logger.dll
+      CECM.Encryption.dll
+      CECM.Encryption.exe
+      CECM.Parser+Windows Service
+      CECM.Windows.EXE
+      CECM.Web(webAPI/Angular JS,Bootstrap/JS/JQuery)
+      CECM. Android
+      CECM. IOS
+      CECM.WinMobile
+      CECM.Test
+      CECM.SQL Server (2014)
+
+
+
+
+References
+1) https://www.youtube.com/watch?v=E7Voso411Vs - Mosh
+2) https://www.youtube.com/watch?v=VAtVv1Q7ufM - Patrick
+3) https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application - ASP.NET
