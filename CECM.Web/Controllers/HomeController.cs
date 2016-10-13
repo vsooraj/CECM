@@ -13,7 +13,7 @@ namespace CECM.Web.Controllers
             _Employee = new EmployeeRepository();
             // ViewBag.Employees = _Employee.;
 
-            return View(_Employee);
+            return View(_Employee.Employees);
         }
 
         public ActionResult About()

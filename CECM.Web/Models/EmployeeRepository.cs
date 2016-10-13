@@ -5,7 +5,7 @@ namespace CECM.Web.Models
 {
     public class EmployeeRepository
     {
-        private readonly List<Employee> Employees;
+        public List<Employee> Employees;
         public EmployeeRepository()
         {
             Employees = new List<Employee>() {
