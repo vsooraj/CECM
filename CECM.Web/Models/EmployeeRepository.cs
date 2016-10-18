@@ -8,8 +8,8 @@ namespace CECM.Web.Models
         public List<Employee> Employees;
         public EmployeeRepository()
         {
-            Employees = new List<Employee>() {
-                new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
+            Employees = new List<Employee>()
+            {
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
@@ -30,7 +30,9 @@ namespace CECM.Web.Models
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
             new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") }};
+            new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
+            new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") }
+            };
         }
     }
 }

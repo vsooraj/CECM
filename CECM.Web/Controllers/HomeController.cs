@@ -9,9 +9,11 @@ namespace CECM.Web.Controllers
         private EmployeeRepository _Employee;
         public ActionResult Index()
         {
+
+            //return "This is Rebins";
             ViewBag.Submenu = new List<string>() { "ALL", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
             _Employee = new EmployeeRepository();
-            // ViewBag.Employees = _Employee.;
+            ViewBag.Employees = _Employee;
 
             return View(_Employee.Employees);
         }

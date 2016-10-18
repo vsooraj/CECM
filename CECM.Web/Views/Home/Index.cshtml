@@ -6,7 +6,7 @@
 @*<div class="jumbotron">*@
 <div class="container">
     <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
-    <div style="margin-top:10px" class="  pull-right"><ul id="menu">
+    <div style="margin-top:10px" class= "pull-right"><ul id="menu">
     @foreach (var item in ViewBag.Submenu)
     {
         <li class="active"><a href="#">@item</a></li>
@@ -27,17 +27,13 @@
                 <th>Title</th>
                 <th>BirthDate</th>
                 <th>HireDate</th>
-                <th>Address</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>Address</th>  
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                   
+                <tr>                   
                     <td>@item.EmployeeID</td>
                     <td>@item.FirstName</td>
                     <td>@item.LastName</td>
@@ -45,14 +41,8 @@
                     <td>@item.BirthDate</td>
                     <td>@item.HireDate</td>
                     <td>@item.Address</td>
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td>@item.Address</td>
-
-
                 </tr>
-            }
-           
+            }           
         </tbody>
     </table>
 </div>
