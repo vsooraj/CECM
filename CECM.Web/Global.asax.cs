@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CECM.Web.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -13,6 +15,7 @@ namespace CECM.Web
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<EmployeeContext>(new EmployeeInitializer());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
