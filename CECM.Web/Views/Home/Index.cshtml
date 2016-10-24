@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CECM.Web.Models.Employee>
+﻿@model IEnumerable<BO.Employee>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -7,9 +7,9 @@
 <div class="container">
     <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
     <div style="margin-top:10px" class= "pull-right"><ul id="menu">
-    @foreach (var item in ViewBag.Submenu)
+    @foreach (string item in ViewBag.Submenu)
     {
-        <li class="active"><a href="#">@item</a></li>
+        <li class="active">@Html.ActionLink(item, "Search","home", new{ filter = item},null)</li>
     }
 </ul></div>
    
