@@ -1,6 +1,5 @@
-﻿namespace CECM.Web.Models
+﻿namespace BO
 {
-    using System;
     public class Employee
     {
         public int EmployeeID { get; set; }

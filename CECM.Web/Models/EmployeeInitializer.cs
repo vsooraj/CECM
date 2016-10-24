@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -17,14 +18,15 @@ namespace CECM.Web.Models
                 new Employee {EmployeeID = 5, FirstName = "Angitha", LastName = "Das", Title = "Ms.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },
                 new Employee {EmployeeID = 6, FirstName = "Akshay", LastName = "Venugopal", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9497273935" },
                 new Employee {EmployeeID = 7, FirstName = "Noyal", LastName = "P", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
-                new Employee {EmployeeID = 8, FirstName = "Akhila", LastName = "Antony", Title = "Ms.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },
+                new Employee {EmployeeID = 8, FirstName = "Akhila", LastName = "A", Title = "Ms.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },
                 new Employee {EmployeeID = 9, FirstName = "Kiran", LastName = "Francis ", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
                 new Employee {EmployeeID = 10, FirstName = "Sujith", LastName = "K", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
                 new Employee {EmployeeID = 11, FirstName = "Vineeth", LastName = "E", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },
                 new Employee {EmployeeID = 12, FirstName = "Aswati", LastName = "S", Title = "Ms.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
                 new Employee {EmployeeID = 13, FirstName = "Jidesh", LastName = "P", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
                 new Employee {EmployeeID = 14, FirstName = "Dilip", LastName = "Geevarghese", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "9875635669" },
-                new Employee {EmployeeID = 15, FirstName = "Jithu", LastName = "P", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" }
+                new Employee {EmployeeID = 15, FirstName = "Jithu", LastName = "P", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },
+                new Employee {EmployeeID = 1, FirstName = "A", LastName = "Varghese", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Thiruvalla", Region = "My", PostalCode = "689581", Country = "IN", HomePhone = "9497273935" }
             };
 
             //var employees = new List<Employee>
