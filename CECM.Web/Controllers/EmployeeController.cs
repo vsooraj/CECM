@@ -9,13 +9,12 @@ namespace CECM.Web.Controllers
 {
     public class EmployeeController : Controller
     {
-        //private EmployeeContext db = new EmployeeContext();
-        private DBCS db = new DBCS();
+        private EmployeeContext db = new EmployeeContext();
 
         // GET: Employees
         public ActionResult Index()
         {
-            var employee = db.Employee.ToList();
+            var employee = db.Employees.ToList();
 
             return View(employee);
         }
@@ -27,7 +26,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employee.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -41,16 +40,13 @@ namespace CECM.Web.Controllers
             return View();
         }
 
-        // POST: Employees/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EmployeeID,FirstName,LastName,Title,BirthDate,HireDate,Address,City,Region,PostalCode,Country,HomePhone")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                db.Employee.Add(employee);
+                db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +61,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employee.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -73,9 +69,6 @@ namespace CECM.Web.Controllers
             return View(employee);
         }
 
-        // POST: Employees/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "EmployeeID,FirstName,LastName,Title,BirthDate,HireDate,Address,City,Region,PostalCode,Country,HomePhone")] Employee employee)
@@ -96,7 +89,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employee.Find(id);
+            Employee employee = db.Employees.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -109,8 +102,8 @@ namespace CECM.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Employee employee = db.Employee.Find(id);
-            db.Employee.Remove(employee);
+            Employee employee = db.Employees.Find(id);
+            db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

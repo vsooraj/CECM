@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Alphabets.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="ListViewEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

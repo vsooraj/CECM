@@ -1,4 +1,4 @@
-﻿@model BO.ListViewEmployee
+﻿@model CECM.Web.ViewModels.HomeViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -8,9 +8,9 @@
     <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
     <div style="margin-top:10px" class= "pull-right"><ul id="menu">
 
-    @foreach (string item in ViewBag.Submenu)
+    @foreach (var item in Model.Alphabets)
     {
-        <li class="active">@Html.ActionLink(item.alphabet, "Search","home", new{ filter = item.alphabet},null)</li>
+        <li class="active">@Html.ActionLink(item.alphabet, "Search","home", new{ filter = item.alphabet },null)</li>
     }
 
 </ul></div>
@@ -51,13 +51,13 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.EmployeeID)</th>
-                <th>@Html.DisplayNameFor(model => model.Title)</th>
-                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
-                <th>@Html.DisplayNameFor(model => model.LastName)</th>                
-                <th>@Html.DisplayNameFor(model => model.BirthDate)</th>
-                <th>@Html.DisplayNameFor(model => model.HireDate)</th>
-                <th>@Html.DisplayNameFor(model => model.Address)</th>  
+                <th>EmployeeID</th>
+                <th>Title</th>
+                <th>FirstName</th>
+                <th>LastName</th>                
+                <th>BirthDate</th>
+                <th>HireDate</th>
+                <th>Address</th>  
             </tr>
         </thead>
         <tbody>
