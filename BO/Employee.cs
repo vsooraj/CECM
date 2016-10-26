@@ -9,15 +9,6 @@
         public string LastName { get; set; }
 
         public string Title { get; set; }
-
-        //public DateTime BirthDate
-        //{
-        //    get
-        //    { return BirthDate.Date; }
-        //    set
-        //    { BirthDate = value; }
-        //}
-
         public System.Nullable<System.DateTime> BirthDate { get; set; }
 
         public System.Nullable<System.DateTime> HireDate { get; set; }
@@ -36,15 +27,5 @@
         {
             get; set;
         }
-
-        //public string Extension { get; set; }
-
-        //public System.Data.Linq.Binary Photo { get; set; }
-
-        //public string Notes { get; set; }
-
-        //public System.Nullable<int> ReportsTo { get; set; }
-
-        //public string PhotoPath { get; set; }
     }
 }

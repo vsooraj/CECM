@@ -1,9 +1,10 @@
 ﻿namespace BO
 {
+    using System.Collections.Generic;
     public class ListViewEmployee
     {
-        public Employee employee { get; set; }
+        public List<Employee> Employees { get; set; }
 
-        public Alphabets alphabets { get; set; }
+        public List<Alphabets> Alphabets { get; set; }
     }
 }

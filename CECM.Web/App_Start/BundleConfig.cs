@@ -24,6 +24,7 @@ namespace CECM.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
+                      "~/Content/searchbox.css",
                       "~/Content/site.css"));
         }
     }
