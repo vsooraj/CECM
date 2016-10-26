@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BO.Employee>
+﻿@model BO.ListViewEmployee
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,12 +10,40 @@
 
     @foreach (string item in ViewBag.Submenu)
     {
-        <li class="active">@Html.ActionLink(item, "Search", "home", new{ filter = item }, null) </li>
+        <li class="active">@Html.ActionLink(item.alphabet, "Search","home", new{ filter = item.alphabet},null)</li>
     }
 
 </ul></div>
    
 </div>
+<div class="container" style="margin-top:10px;">
+    <div style="float:right;">
+    @using (Html.BeginForm("SearchBox", "home"))
+    {
+        @Html.Editor("SearchWord")
+        <input type="submit" value="search"/>
+    }
+    </div>
+</div>
+
+@*<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-3">
+                @using (Html.BeginForm("SearchBox", "home"))
+                {
+                    <div class="search-form">
+                        <div class="form-group has-feedback">
+                            <label for="search" class="sr-only">Search</label>
+                            @Html.Editor("SearchWord")
+                            <input type="submit" class="form-control">
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+                    </div>
+                }
+        </div>
+    </div>
+</div>*@
+
 
 
 <div class="container">
@@ -33,7 +61,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Employees)
             {
                 <tr>                   
                     <td>@Html.DisplayFor(modelItem => item.EmployeeID)</td>
@@ -45,7 +73,7 @@
                     <td>@Html.DisplayFor(modelItem => item.Address)</td>
                     
                 </tr>
-            }           
+                }           
         </tbody>
     </table>
 </div>

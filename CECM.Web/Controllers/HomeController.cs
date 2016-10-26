@@ -7,9 +7,7 @@ namespace CECM.Web.Controllers
 {
     public class HomeController : Controller
     {
-        // EmployeeRepository _Employee;
-        private DBCS db = new DBCS();
-
+        //private EmployeeRepository _Employee;
         public ActionResult Index()
         {
 
@@ -35,6 +33,8 @@ namespace CECM.Web.Controllers
 
         public ActionResult Search(string filter)
         {
+            var listEmployees = Info_seed();
+            var employees = listEmployees.Employees;
 
             ViewBag.Message = "Your application description page.";
 
@@ -60,12 +60,26 @@ namespace CECM.Web.Controllers
 
             if (filter != "ALL")
             {
+                listEmployees.Employees = employees.Where(x => x.FirstName.Substring(0, 1).ToLower().Contains(filter.ToLower()) || x.LastName.Substring(0, 1).ToLower().Contains(filter.ToLower())).ToList();
+                return View("Index", listEmployees);
                 return View("Index", employee.Where(x => x.FirstName.Contains(filter) || x.LastName.Contains(filter)));
             }
             else
             {
+                listEmployees.Employees = employees;
+                return View("Index", listEmployees);
+            }
+        }
                 return View("Index", employee);
             }
+
+
+        public ActionResult SearchBox(string SearchWord)
+        {
+            var listEmployees = Info_seed();
+            var employees = listEmployees.Employees;
+            listEmployees.Employees = employees.Where(x => x.FirstName.ToLower().Contains(SearchWord.ToLower()) || x.LastName.ToLower().Contains(SearchWord.ToLower()) || x.Address.ToLower().Contains(SearchWord.ToLower())).ToList();
+            return View("Index", listEmployees);
 
         }
 
@@ -82,5 +96,16 @@ namespace CECM.Web.Controllers
 
             return View();
         }
+        public ListViewEmployee Info_seed()
+        {
+            var employees = new EmployeeRepository().Employees;
+            ListViewEmployee listEmployees = new ListViewEmployee();
+            AlphabetsRepository alphabetsRepo = new AlphabetsRepository();
+            listEmployees.Alphabets = alphabetsRepo.listAlphabets;
+            listEmployees.Employees = employees;
+
+            return listEmployees;
+        }
+
     }
 }
