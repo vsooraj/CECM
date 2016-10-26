@@ -15,7 +15,7 @@ namespace CECM.Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<EmployeeContext>(new EmployeeInitializer());
+            //Database.SetInitializer<EmployeeContext>(new EmployeeInitializer());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -10,31 +10,7 @@ namespace CECM.Web.Models
         public EmployeeRepository()
         {
             Employees = new List<Employee>()
-            //{
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") },
-            //new Employee() { EmployeeID = 1, FirstName = "Noyal", LastName = "Vincy", Title = "Mr", Address = "Infopark", BirthDate = Convert.ToDateTime("1-1-2000"), HireDate = Convert.ToDateTime("10-10-2016") }
-            //};
-                        {
+            {
                 new Employee {EmployeeID = 1, FirstName = "Rebin", LastName = "Varghese", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Thiruvalla", Region = "My", PostalCode = "689581", Country = "IN", HomePhone = "9497273935" },
                 new Employee {EmployeeID = 2, FirstName = "Joe", LastName = "Davis", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8569369854" },
                 new Employee {EmployeeID = 3, FirstName = "Dino", LastName = "Sunny", Title = "Mr.",BirthDate = DateTime.Now ,HireDate = DateTime.Now,Address = "This", City = "Is", Region = "My", PostalCode = "658965", Country = "IN", HomePhone = "8586258565" },

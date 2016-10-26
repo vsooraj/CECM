@@ -7,10 +7,12 @@
 <div class="container">
     <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
     <div style="margin-top:10px" class= "pull-right"><ul id="menu">
+
     @foreach (string item in ViewBag.Submenu)
     {
-        <li class="active">@Html.ActionLink(item, "Search","home", new{ filter = item},null)</li>
+        <li class="active">@Html.ActionLink(item, "Search", "home", new{ filter = item }, null) </li>
     }
+
 </ul></div>
    
 </div>
@@ -21,26 +23,27 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>EmployeeID</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Title</th>
-                <th>BirthDate</th>
-                <th>HireDate</th>
-                <th>Address</th>  
+                <th>@Html.DisplayNameFor(model => model.EmployeeID)</th>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.LastName)</th>                
+                <th>@Html.DisplayNameFor(model => model.BirthDate)</th>
+                <th>@Html.DisplayNameFor(model => model.HireDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Address)</th>  
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>                   
-                    <td>@item.EmployeeID</td>
-                    <td>@item.FirstName</td>
-                    <td>@item.LastName</td>
-                    <td>@item.Title</td>
-                    <td>@item.BirthDate</td>
-                    <td>@item.HireDate</td>
-                    <td>@item.Address</td>
+                    <td>@Html.DisplayFor(modelItem => item.EmployeeID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.BirthDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.HireDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    
                 </tr>
             }           
         </tbody>

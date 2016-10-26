@@ -4,19 +4,11 @@
     {
         public int EmployeeID { get; set; }
 
+        public string Title { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public string Title { get; set; }
-
-        //public DateTime BirthDate
-        //{
-        //    get
-        //    { return BirthDate.Date; }
-        //    set
-        //    { BirthDate = value; }
-        //}
 
         public System.Nullable<System.DateTime> BirthDate { get; set; }
 
@@ -32,10 +24,7 @@
 
         public string Country { get; set; }
 
-        public string HomePhone
-        {
-            get; set;
-        }
+        public string HomePhone { get; set; }
 
         //public string Extension { get; set; }
 

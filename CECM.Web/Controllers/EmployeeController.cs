@@ -9,14 +9,15 @@ namespace CECM.Web.Controllers
 {
     public class EmployeeController : Controller
     {
-        private EmployeeContext db = new EmployeeContext();
+        //private EmployeeContext db = new EmployeeContext();
+        private DBCS db = new DBCS();
 
         // GET: Employees
         public ActionResult Index()
         {
-            var employees = db.Employees.ToList();
+            var employee = db.Employee.ToList();
 
-            return View(employees);
+            return View(employee);
         }
 
         // GET: Employees/Details/5
@@ -26,7 +27,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
+            Employee employee = db.Employee.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -49,7 +50,7 @@ namespace CECM.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Employees.Add(employee);
+                db.Employee.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +65,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
+            Employee employee = db.Employee.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -95,7 +96,7 @@ namespace CECM.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
+            Employee employee = db.Employee.Find(id);
             if (employee == null)
             {
                 return HttpNotFound();
@@ -108,8 +109,8 @@ namespace CECM.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Employee employee = db.Employees.Find(id);
-            db.Employees.Remove(employee);
+            Employee employee = db.Employee.Find(id);
+            db.Employee.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
