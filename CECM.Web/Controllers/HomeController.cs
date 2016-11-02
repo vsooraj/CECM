@@ -22,6 +22,7 @@ namespace CECM.Web.Controllers
             var homeView = GetHomeView("");
             return View("Index", homeView);
         }
+
         public ActionResult Search(string filter)
         {
             _homeViewModel.Alphabets = _alphabetsRepository.listAlphabets;
@@ -29,36 +30,32 @@ namespace CECM.Web.Controllers
 
             if (filter == "ALL")
             {
-                return View("Index", db.Employees.ToList());
+                _homeViewModel.Employees = db.Employees.ToList();
+                return View("Index", _homeViewModel);
             }
             else
             {
                 _homeViewModel.Employees = db.Employees.Where(x => x.FirstName.Substring(0, 1).ToLower().Contains(filter.ToLower()) ||
                x.LastName.Substring(0, 1).ToLower().Contains(filter.ToLower())).ToList();
                 return View("Index", _homeViewModel);
-
             }
-
         }
 
         public ActionResult SearchBox(string SearchWord)
         {
             var homeView = GetHomeView(SearchWord);
             return View("Index", homeView);
-
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
         public HomeViewModel GetHomeView(string filter)
@@ -73,11 +70,9 @@ namespace CECM.Web.Controllers
             else
             {
                 _homeViewModel.Employees = db.Employees.ToList();
-
             }
 
             return _homeViewModel;
         }
-
     }
 }

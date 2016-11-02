@@ -4,11 +4,49 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using System.Collections.Generic;
+
+//using System.Collections.Generic;
+
 
 namespace CECM.Web.Controllers
 {
     public class EmployeeController : Controller
     {
+
+
+
+
+        [HttpPost]
+        public JsonResult Index(string Prefix)
+        {
+            //Note : you can bind same list from database  
+            List<Country> ObjList = new List<Country>()
+            {
+                    new Country {Id=1,Name="Latur" },
+                    new Country {Id=2,Name="Mumbai" },
+                    new Country {Id=3,Name="Pune" },
+                    new Country {Id=4,Name="Delhi" },
+                    new Country {Id=5,Name="Dehradun" },
+                    new Country {Id=6,Name="Noida" },
+                    new Country {Id=7,Name="New Delhi" }
+            };
+
+            //var employee = db.Employees.ToList();
+
+
+            //Searching records from list using LINQ query  
+            var Country = (from N in ObjList
+                           where N.Name.StartsWith(Prefix)
+                           select new { N.Name });
+            return Json(Country, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
         private EmployeeContext db = new EmployeeContext();
 
         // GET: Employees
