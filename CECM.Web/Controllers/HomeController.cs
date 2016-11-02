@@ -79,7 +79,7 @@ namespace CECM.Web.Controllers
                     sortView.Employees = sortView.Employees.OrderBy(s => s.LastName).ToList();
                     break;
             }
-            sortView.page_Employees = sortView.Employees.ToPagedList(page ?? 1, 3);
+            sortView.page_Employees = sortView.Employees.ToPagedList(page ?? 1, 10);
             return View("Index", sortView);
 
 
@@ -101,9 +101,7 @@ namespace CECM.Web.Controllers
                x.LastName.Substring(0, 1).ToLower().Contains(filter.ToLower())).ToList();
                 _homeViewModel.page_Employees = _homeViewModel.Employees.ToPagedList(page ?? 1, 3);
                 return View("Index", _homeViewModel);
-
             }
-
         }
 
         public ActionResult SearchBox(string SearchWord, int? page)
@@ -111,7 +109,6 @@ namespace CECM.Web.Controllers
             var homeView = GetHomeView(SearchWord);
             _homeViewModel.page_Employees = _homeViewModel.Employees.ToPagedList(page ?? 1, 3);
             return View("Index", homeView);
-
         }
 
         public ViewResult Sort(string sortOrder, string attr, int? page)
@@ -144,14 +141,12 @@ namespace CECM.Web.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
         public HomeViewModel GetHomeView(string filter)
@@ -166,11 +161,9 @@ namespace CECM.Web.Controllers
             else
             {
                 _homeViewModel.Employees = db.Employees.ToList();
-
             }
 
             return _homeViewModel;
         }
-
     }
 }
