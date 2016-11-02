@@ -1,4 +1,6 @@
 ﻿@model CECM.Web.ViewModels.HomeViewModel
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,15 +12,16 @@
 
     @foreach (var item in Model.Alphabets)
     {
-        <li class="active">@Html.ActionLink(item.alphabet, "Search","home", new{ filter = item.alphabet },null)</li>
+        <li class="active">@Html.ActionLink(item.alphabet, "Index","home",  new { filter = item.alphabet, SearchWord = "" },null)</li>
     }
+
 
 </ul></div>
    
 </div>
 <div class="container" style="margin-top:10px;">
     <div style="float:right;">
-    @using (Html.BeginForm("SearchBox", "home"))
+    @using (Html.BeginForm("Index", "home", FormMethod.Get))
     {
         @Html.Editor("SearchWord")
         <input type="submit" value="search"/>
@@ -59,17 +62,19 @@
                     FirstName
                 </th>
                 <th>
-                    @Html.ActionLink("Last Name", "Sort", new { sortOrder = ViewBag.NameSortParm, attr = "LastName" })
+                    @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, earchWord = ViewBag.SearchWord,
+                   filter = ViewBag.filter, attr = "LastName" })
                 </th>                
                 <th>BirthDate</th>
                 <th>
-                    @Html.ActionLink("HireDate", "Sort", new { sortOrder = ViewBag.DateSortParm, attr = "HireDate" })
+                    @Html.ActionLink("HireDate", "Index", new { sortOrder = ViewBag.DateSortParm, earchWord = ViewBag.SearchWord,
+                   filter = ViewBag.filter, attr = "HireDate" })
                 </th>
                 <th>Address</th>  
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Employees)
+            @foreach (var item in Model.page_Employees)
             {
                 <tr>                   
                     <td>@Html.DisplayFor(modelItem => item.EmployeeID)</td>
@@ -85,3 +90,8 @@
         </tbody>
     </table>
 </div>
+
+Page @(Model.page_Employees.PageCount < Model.page_Employees.PageNumber ? 0 : Model.page_Employees.PageNumber) of @Model.page_Employees.PageCount
+
+@Html.PagedListPager(Model.page_Employees, page => Url.Action("Index",
+    new { page, SearchWord = ViewBag.SearchWord, filter = ViewBag.filter, sortOrder = ViewBag.CurrentSort }))
