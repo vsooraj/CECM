@@ -27,14 +27,14 @@ namespace CECM.Web.Controllers
             {
                 homeView = GetHomeView("");
 
-                homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 10);
+                //homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 10);
 
             }
             //Search by Search Word
             else if (string.IsNullOrEmpty(SearchWord) == false)
             {
                 homeView = GetHomeView(SearchWord);
-                homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
+                //homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
             }
 
             //Search by Alphabet
@@ -46,13 +46,13 @@ namespace CECM.Web.Controllers
 
                 if (filter == "ALL")
                 {
-                    homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
+                    //homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
                 }
                 else
                 {
                     homeView.Employees = db.Employees.Where(x => x.FirstName.Substring(0, 1).ToLower().Contains(filter.ToLower()) ||
                    x.LastName.Substring(0, 1).ToLower().Contains(filter.ToLower())).ToList();
-                    homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
+                    //homeView.page_Employees = homeView.Employees.ToPagedList(page ?? 1, 3);
 
                 }
             }
