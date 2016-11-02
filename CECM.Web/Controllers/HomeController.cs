@@ -1,6 +1,6 @@
-﻿using BO;
-using CECM.Web.Models;
+﻿using CECM.Web.Models;
 using CECM.Web.ViewModels;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -45,6 +45,33 @@ namespace CECM.Web.Controllers
         {
             var homeView = GetHomeView(SearchWord);
             return View("Index", homeView);
+        }
+
+        public ViewResult Sort(string sortOrder, string attr)
+        {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            var sortView = GetHomeView("");
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    sortView.Employees = sortView.Employees.OrderByDescending(s => s.LastName).ToList();
+                    break;
+                case "Date":
+                    sortView.Employees = sortView.Employees.OrderBy(s => s.HireDate).ToList();
+                    break;
+                case "date_desc":
+                    sortView.Employees = sortView.Employees.OrderByDescending(s => s.HireDate).ToList();
+                    break;
+                default:  // Name ascending 
+                    sortView.Employees = sortView.Employees.OrderBy(s => s.LastName).ToList();
+                    break;
+            }
+
+            return View("Index", sortView);
         }
 
         public ActionResult About()

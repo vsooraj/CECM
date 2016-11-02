@@ -49,12 +49,20 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>EmployeeID</th>
+                <th>
+                    EmployeeID
+                </th>
                 <th>Title</th>
-                <th>FirstName</th>
-                <th>LastName</th>                
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    @Html.ActionLink("Last Name", "Sort", new { sortOrder = ViewBag.NameSortParm, attr = "LastName" })
+                </th>                
                 <th>BirthDate</th>
-                <th>HireDate</th>
+                <th>
+                    @Html.ActionLink("HireDate", "Sort", new { sortOrder = ViewBag.DateSortParm, attr = "HireDate" })
+                </th>
                 <th>Address</th>  
             </tr>
         </thead>

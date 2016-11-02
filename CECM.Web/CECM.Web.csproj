@@ -217,7 +217,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlphabetsRepository.cs" />
     <Compile Include="Models\EmployeeInitializer.cs" />
-    <Compile Include="Models\EmployeeRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\EmployeeContext.cs" />
