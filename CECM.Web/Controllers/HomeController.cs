@@ -79,7 +79,7 @@ namespace CECM.Web.Controllers
                     sortView.Employees = sortView.Employees.OrderBy(s => s.LastName).ToList();
                     break;
             }
-            sortView.page_Employees = sortView.Employees.ToPagedList(page ?? 1, 10);
+            sortView.page_Employees = sortView.Employees.ToPagedList(page ?? 1, 8);
             return View("Index", sortView);
 
 

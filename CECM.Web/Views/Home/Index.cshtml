@@ -7,8 +7,13 @@
 
 @*<div class="jumbotron">*@
 <div class="container">
-    <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
-    <div style="margin-top:10px" class= "pull-right"><ul id="menu">
+
+    <div style="float:left;">
+        <h2>Employee List</h2>
+
+    </div>
+
+    <div style="margin-top:25px;float:right;"><ul id="menu">
 
     @foreach (var item in Model.Alphabets)
     {
@@ -19,16 +24,7 @@
 </ul></div>
    
 </div>
-<div class="container" style="margin-top:10px;">
-    <div style="float:right;">
-    @using (Html.BeginForm("Index", "home", FormMethod.Get))
-    {
-        @Html.Editor("SearchWord")
-        <input type="submit" value="search"/>
-    }
-    </div>
-</div>
-
+@* Search box *@
 @*<div class="container">
     <div class="row">
         <div class="col-md-3 col-md-offset-3">
@@ -48,7 +44,22 @@
 </div>*@
 
 <div class="container">
-    <h2>Contacts</h2>
+    <div style="float:left;margin-top:10px;">
+        <button type="button" style="margin-top:10px" class="btn btn-primary">CONTACT  <span class="glyphicon glyphicon-plus"></span></button>
+    </div>
+    
+    <div style="margin-top:20px;margin-bottom:20px;margin-left:10px;float:right; padding-top:5px;">
+        <div>
+            @using (Html.BeginForm("Index", "home", FormMethod.Get))
+            {
+                @Html.Editor("SearchWord")
+                <input type="submit" value="search" />
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container"> 
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -89,7 +100,13 @@
     </table>
 </div>
 
-Page @(Model.page_Employees.PageCount < Model.page_Employees.PageNumber ? 0 : Model.page_Employees.PageNumber) of @Model.page_Employees.PageCount
-
-@Html.PagedListPager(Model.page_Employees, page => Url.Action("Index",
+<div class="container">
+    <div style="float:left;">
+        @Html.PagedListPager(Model.page_Employees, page => Url.Action("Index",
     new { page, SearchWord = ViewBag.SearchWord, filter = ViewBag.filter, sortOrder = ViewBag.CurrentSort }))
+    </div>
+    <div style="float:left; margin-top:25px;margin-bottom:25px;margin-left:10px;">
+        Page @(Model.page_Employees.PageCount < Model.page_Employees.PageNumber ? 0 : Model.page_Employees.PageNumber) of @Model.page_Employees.PageCount
+    </div>
+    
+</div>
